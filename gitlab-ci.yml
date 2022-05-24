@@ -1,0 +1,23 @@
+image: cr.yandex/crp742p3qacifd2hcon2/practice-da:latest
+
+before_script:
+    - pip install matplotlib_venn
+    - pip install openpyxl
+
+report_job:
+    only:
+        refs:
+            - schedules
+        variables:
+            - $SCHEDULE_TYPE == "everyday"
+    script:
+        - python telegram_report.py
+
+alert_job:
+    only:
+        refs:
+            - schedules
+        variables:
+            - $SCHEDULE_TYPE == "alert"
+    script:
+        - python alert_report.py
