@@ -64,7 +64,7 @@ def check_anomaly(df, df_today, metric):
 def run_alerts(chat=None):
     # chat_id = chat or 187545653
     chat_id = chat or -701443838
-    bot = telegram.Bot(token='5029891106:AAFyzHPo3PufBPunqVTs6OxNzuW8xc08dK0')
+    bot = telegram.Bot(token='***')
 
     # get data for last month
     data = Getch(''' SELECT
